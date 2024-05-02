@@ -10,7 +10,7 @@ const read = async (filter) => {
 const readOne = async (filter) => {
   return await categoriesModel.findOne(filter)
 }
-const update = async (id, newMsg) => {
+const update = async (id) => {
 
 };
 const del = async (id) => {
