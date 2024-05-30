@@ -1,6 +1,5 @@
 const categoriesModel = require('../models/categories.model.js')
 
-// CRUD
 const create = async (data) => {
   return await categoriesModel.create(data)
 }
@@ -11,9 +10,11 @@ const readOne = async (filter) => {
   return await categoriesModel.findOne(filter)
 }
 const update = async (id) => {
-
+  return await categoriesModel.findOneAndUpdate(filter)
+  
 };
 const del = async (id) => {
+  return await categoriesModel.findOneAndDelete(filter)
 
 }
 

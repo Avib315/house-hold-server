@@ -1,7 +1,7 @@
-const categoriesControler = require("../DL/controllers/categories.controller");
+const categoriesController = require("../DL/controllers/categories.controller");
 
 async function getCategories (){
-    const categories = await categoriesControler.read({})
+    const categories = await categoriesController.read({})
     return categories
 }  
 module.exports = {getCategories}
