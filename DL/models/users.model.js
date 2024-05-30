@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
-const itemSchema = require("./item.schema");
-
-
-
+const { itemSchema } = require("./item.model");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -19,8 +16,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   items: [itemSchema],
+  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
-
 const userModels = mongoose.model("User", userSchema);
-
 module.exports = userModels;

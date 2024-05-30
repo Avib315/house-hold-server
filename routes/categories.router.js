@@ -3,9 +3,7 @@ const express = require('express'),
 const categoriesService = require('../BL/categories.service.js')
 router.get('/get-categories', async (req, res) => {
     try {
-        console.log("------------------- ROUTER IN  ----------------------");
         const result = await categoriesService.getCategories()
-        console.log(result);
         res.send(result)
     }
     catch (err) {

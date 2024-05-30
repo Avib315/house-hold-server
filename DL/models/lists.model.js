@@ -4,7 +4,7 @@ const listSchema = new mongoose.Schema({
   name: { type: String, required: true },
   created: { type: Date, default: Date.now },
   name: { type: String, required: true },
-  list: [{ _id: { type: mongoose.Schema.Types.ObjectId, ref: "User.Items" } }],
+  list: [{ _id: { type: mongoose.Schema.Types.ObjectId, ref: "User.Items.item" } }],
 });
 
 const listModels = mongoose.model("List", listSchema);
