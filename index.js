@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: true
     }));
     app.use(express.json());
@@ -19,6 +19,6 @@ app.use("/api/user", require("./routes/user.router.js"));
 app.use("/api/categories", require("./routes/categories.router.js"));
 app.use("/api/items", auth, require("./routes/userItems.router.js"));
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`\x1b[42m [index.js] server is running on port ${PORT} \x1b[0m`);
 });
