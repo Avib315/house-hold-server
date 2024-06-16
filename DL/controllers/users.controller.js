@@ -12,7 +12,6 @@ const readOne = async (filter) => {
 }
 const update = async (filter, data) => {
     return await userModel.findOneAndUpdate(filter, data)
-
 };
 const del = async (filter) => {
     return await update(filter, { isActive: false })

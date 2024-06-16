@@ -6,7 +6,7 @@ const connect = async () => {
             console.log(`\x1b[42m [db.js] connected to DB \x1b[0m`);
         })
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 module.exports = { connect }
