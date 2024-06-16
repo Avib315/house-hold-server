@@ -9,7 +9,7 @@ router.post('/get-items', async (req, res) => {
         const items = await userItemService.getUserItems(req.body.userId, categoryId, itemsId, itemName);
         res.send(items)
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 });
 router.post('/add-item', async (req, res) => {
@@ -17,7 +17,7 @@ router.post('/add-item', async (req, res) => {
         const items = await userItemService.addToUserItem(req.body.userId, req.body.item);
         res.send(items)
     } catch (err) {
-        console.log(err);
+        console.error(err); 
     }
 });
 

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { itemSchema } = require("./item.model");
+const { listSchema } = require("./lists.model");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -16,6 +17,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   items: [itemSchema],
+  lists: [listSchema],
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 const userModels = mongoose.model("User", userSchema);
