@@ -13,7 +13,7 @@ router.post('/login', async (req, res) => {
         const { result, token } = await userService.login(userInput);
 
         if (token) {
-            res.cookie('token', token, { httpOnly: true, });
+            res.cookie('token', token, { httpOnly: true, secure: true, sameSite: "None" });
         }
 
         res.status(200).send(result);

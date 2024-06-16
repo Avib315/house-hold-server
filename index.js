@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-    origin: ['http://localhost:5173','https://shopping-wizerd.netlify.app/'],
+    origin: ['http://localhost:5173','https://shopping-wizerd.netlify.app'],
     credentials: true
     }));
     app.use(express.json());
