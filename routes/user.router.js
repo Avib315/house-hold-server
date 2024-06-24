@@ -28,7 +28,8 @@ router.post('/register', async (req, res) => {
         const userInput = {
             name: `${req.body?.fName.trim()} ${req.body?.lName.trim()}`,
             email: req.body?.email,
-            password: req.body?.password
+            password: req.body?.password,
+            avatar: req.body?.avatar
         };
 
         const result = await userService.register(userInput);

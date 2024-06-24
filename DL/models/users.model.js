@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { itemSchema } = require("./item.model");
-const { listSchema } = require("./lists.model");
+const { shoppingListSchema } = require("./shoppingList.schema");
+const { recipesSchema } = require("./recipes.model");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,7 +18,9 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   items: [itemSchema],
-  lists: [listSchema],
+  lists: [shoppingListSchema],
+  shoppingList: [{ type: mongoose.Schema.Types.ObjectId, ref: "User.Lists.list" }],
+  recipes: [recipesSchema],
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 const userModels = mongoose.model("User", userSchema);
