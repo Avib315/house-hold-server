@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  avatar:String,
   items: [itemSchema],
   lists: [shoppingListSchema],
   shoppingList: [{ type: mongoose.Schema.Types.ObjectId, ref: "User.Lists.list" }],
