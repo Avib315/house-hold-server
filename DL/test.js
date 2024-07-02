@@ -56,11 +56,17 @@ const beginTransData = async () => {
     }
 }
 const createUser = async () => {
-    console.log("______ strat _______");
-    let user = await userController.readOne({ _id: "66548381ee8fe1ae76a7d34d" })
-    
-    console.log("______ end _______");
+    console.log("______ start _______");
+    // let user = await userController.readOne({ _id: "" })
+    const items = await itemController.read({})
+    console.log(items);
+    const res = await userController.update({_id:"6679c346191dc00e108d3e66"}, {items:[...items]})
+    // user.items.forEach(async (item , i) => {
+    //     const newItem = {categoryId:item.categoryId , displayName:item.displayName}
+    //     console.log("create:",i)
+    // })
+    console.log("______ finish _______");
 
 }
-// createUser()
+createUser()
 // beginTransData()
